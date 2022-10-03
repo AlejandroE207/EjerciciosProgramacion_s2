@@ -6,7 +6,7 @@ public class EjercicioMatrizFormaCaracol {
         System.out.println("La matriz sera de NxN (cuadrada) Digite el tamaño: ");
         int n;
         n = sc.nextInt();
-        int a=0, b=n-1, valor=0;
+        int a=0, b=n-1, valor=1;
         int[][] matriz = new int [n][n];
        
         for(int j=0;j<matriz.length;j++){
@@ -27,7 +27,7 @@ public class EjercicioMatrizFormaCaracol {
         
         for(int i = 0; i<matriz.length;i++){
             for(int j=0; j<matriz[i].length;j++){
-                System.out.print(matriz[i][j]+" ");
+                System.out.print("\t"+matriz[i][j]);
             }
             System.out.println("");
         }
