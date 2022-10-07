@@ -12,12 +12,12 @@ public class MatrizCaracolNxM {
 		int m=sc.nextInt();
 		
 		int[][] matriz=new int[n][m];
-		int izq=0;// Dirección izquierda
-		int der=matriz[0].length-1;//Dirección correcta
-		int arriba=0;//Hacia arriba
-		int abajo=matriz.length-1;//Hacia abajo
+		int izq=0;
+		int der=matriz[0].length-1;
+		int arriba=0;
+		int abajo=matriz.length-1;
 		
-		String direction="derecha";// La dirección a recorrer
+		String direction="derecha";
 		int temp=1;
 		while(izq<=der&&arriba<=abajo){
 			if(direction.equals("derecha")){
