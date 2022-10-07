@@ -4,8 +4,7 @@ public class EjercicioMatrizFormaCaracol {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("La matriz sera de NxN (cuadrada) Digite el tamaño: ");
-        int n;
-        n = sc.nextInt();
+        int n = sc.nextInt();
         int a=0, b=n-1, valor=1;
         int[][] matriz = new int [n][n];
        

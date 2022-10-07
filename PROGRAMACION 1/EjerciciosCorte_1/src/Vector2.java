@@ -15,18 +15,19 @@ public class Vector2 {
     }
     
     public void ordenar(){
-        int aux = 0;
+        int aux = 0;        
         for(int i=0;i<n;i++){
-            for(int j=0;j<n-1;j++){}
+            for( int j=0;j<n-1;j++){
                 for(int h=0;h<m;h++)
                     if(vec[j][h]>vec[j][h+1]){
-                        aux=vec[j];
+                        aux=vec[j][h];
                         vec[j]=vec[j+1];
-                        vec[j+1]=aux;
+                        vec[j+1][h]=aux;
                 }
             }
         }
     }
+    
     
     public String mostrarVector(){
         String cad = " ";
