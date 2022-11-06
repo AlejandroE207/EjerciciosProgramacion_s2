@@ -4,19 +4,16 @@ public class Plantas {
     float tamaño,crecimiento;
     int dias;
     String cultivador;
-
     public Plantas(String cultivador,String nombre, float tamaño, float crecimiento) {
         this.nombre = nombre;
         this.tamaño = tamaño;
         this.crecimiento = crecimiento;
         this.cultivador=cultivador;
-        
     }
      static void Crecimiento (Plantas p1,Plantas p2,Plantas p3){
       int dias=0;
       float tamaFinP1=p1.tamaño,tamaFinP2=p2.tamaño,tamaFinP3=p3.tamaño;
       boolean tbP1=true, tbP2=true, tbP3=true;
-      
         while (tamaFinP1<=30){
             dias ++;
             tamaFinP1=(tamaFinP1*p1.crecimiento)+tamaFinP1;
@@ -38,7 +35,6 @@ public class Plantas {
             p3.tamaño=(float) Math.floor(tamaFinP3);
         }
      }
-     
     static void GetMenor(Plantas p1,Plantas p2,Plantas p3){
         Scanner sc = new Scanner(System.in);
         int primero=1,segundo=1,tercero=1;
@@ -124,7 +120,6 @@ public class Plantas {
     }
     
     public static void main(String[] args) {
-
       Plantas p1= new Plantas("Juan","Clement",(float) 10, (float) 0.01); 
       Plantas p2= new Plantas("Luis","Crisis", (float)20, (float) 0.005); 
       Plantas p3= new Plantas("Ana","Lucho", (float)5, (float) 0.5); 
