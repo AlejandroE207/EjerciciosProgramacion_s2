@@ -1,4 +1,4 @@
-package tallerprogramacion;
+package Punto1;
 import java.util.*;
 public class Punto1 {
 
