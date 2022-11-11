@@ -36,8 +36,7 @@ public class Punto2 {
         int numMinEst2=estante2[0];
         int posMinEst2=0;
         
-        int numAux;
-        for(int g = 0;g<=k;g++){
+        for(int g = 0;g<n;g++){
             for(int i=0;i<n;i++){
                 if(numMaxEst1<estante1[i]){
                     numMaxEst1=estante1[i];
@@ -53,9 +52,9 @@ public class Punto2 {
             System.out.println("numero min est1: "+numMinEst1);
             System.out.println("posicion numero min est1: "+posMinEst1);
             for(int j=0;j<n;j++){
-                if(numMaxEst1<estante2[j]){
-                    numMaxEst1=estante2[j];
-                    posMaxEst1=j;
+                if(numMaxEst2<estante2[j]){
+                    numMaxEst2=estante2[j];
+                    posMaxEst2=j;
                 }
                 if(numMinEst2>estante2[j]){
                     numMinEst2=estante2[j];
@@ -66,19 +65,17 @@ public class Punto2 {
             System.out.println("posicion numero max est2: "+posMaxEst2);
             System.out.println("numero min est2: "+numMinEst2);
             System.out.println("posicion numero min est2: "+posMinEst2);
-//            if(numMaxEst1<numMaxEst2){
-//                numAux=numMaxEst1;
-            for(int i=0;i<n;i++){
-                if(i==posMaxEst1)
-                estante1[i]=0;
+            
+            //CAMBIO DE VALORES
+            if(numMaxEst1<numMaxEst2){
+                int numAux;
+                numAux = estante1[posMaxEst1];
+                estante1[posMaxEst1]=numMinEst2;
+                estante2[posMinEst2]=numAux;
+                
             }
-                
-//                estante2[posMaxEst2]=numAux;
-                
-//            }   
             
         }
-  
         for(int i=0;i<n;i++){
             System.out.print(estante1[i]+" ");
         }
@@ -86,7 +83,7 @@ public class Punto2 {
         for(int i=0;i<n;i++){
             System.out.print(estante2[i]+" ");
         }
-    
     }
-    
 }
+
+

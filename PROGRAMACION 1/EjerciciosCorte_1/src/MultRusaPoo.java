@@ -44,21 +44,10 @@ public class MultRusaPoo {
     public static void main(String[] arg){
         Scanner sc = new Scanner(System.in);
         int n,m;
-        try{
             System.out.print("Digite el valor del multiplicando: ");
             n=sc.nextInt();
             System.out.print("Digite el valor del multiplicador: ");
             m=sc.nextInt();
-        }
-        catch(InputMismatchException e){
-            System.out.println("Digite numeros enteros POR FAVOR >:C");
-        }
-        finally{
-            System.out.print("Digite el valor del multiplicando: ");
-            n=sc.nextInt();
-            System.out.print("Digite el valor del multiplicador: ");
-            m=sc.nextInt();
-        }
         
         MultRusaPoo mult = new MultRusaPoo(n,m);
         
