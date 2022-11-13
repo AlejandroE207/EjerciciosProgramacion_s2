@@ -15,6 +15,7 @@ public class Punto1 {
         int colum=matriz[0].length;
         int n,numVal=0;
         int uniones;
+        System.out.println("////////// PUNTO 1 //////////");
 //BUCLE DE LLENADO DE MATRIZ
         System.out.println("LLENADO DE MATRIZ");
         for(int i=0;i<filas;i++){
