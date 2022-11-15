@@ -28,9 +28,7 @@ public class Punto1 {
         ArrayList<Integer> valores = new ArrayList<>();
         for(int i=0;i<filas;i++){
             for(int j=0;j<colum;j++){
-                if(valores.indexOf(matriz[i][j])>=0){ 
-                }
-                else{
+                if(valores.indexOf(matriz[i][j])<0){ //IF QUE VERIFICA SI EL NUMERO SE REPITE O NO, POR ESO <0 TIENE QUE SER MENOR OSEA QUE NO EXISTE EL NUMERO EN LA LIST
                     valores.add(matriz[i][j]);
                 }
             }
@@ -65,8 +63,6 @@ public class Punto1 {
                         }
                     }
                 }
-               
-               
            }
        }
         System.out.println("Uniones "+uniones);
