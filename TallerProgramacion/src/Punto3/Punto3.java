@@ -43,27 +43,39 @@ public class Punto3 {
         if(colmIn>colmFin){
             System.out.println("IF PARTIDO");
             int [][]matAux=new int [3][3];
-            int n=5;
-
-            for(int i=colmIn;i<=9;i++){
-                for(int j=filIn;j<=2;j++){
-                    System.out.println(matriz[j][i]+" ");
-                    matAux[j][i]=matriz[j][i];
+            //FOR MAT AUXILIAR 
+            for(int i=0;i<3;i++){
+                for(int j=0;j<3;j++){
+                    matAux[j][i]=matriz[j][i+7];
                 }
-                System.out.print("");
             }
-            for(int i=0;i<=1;i++){
-                for(int j=3;j<=5;j++){
-                    matAux[j][i]=matriz[j][i];
+            for(int i=0;i<2;i++){
+                for(int j=0;j<3;j++){
+                    matAux[j][i]=matriz[j+3][i];
+                }
+            }
+            for(int i=0;i<3;i++){
+                for(int j=0;j<3;){
+                    int aux=matAux[j][i];
+                    matAux[j][i]=matAux[j][i+2];
+                    matAux[j][i+1]=aux;
                 }
             }
             
-             for(int i=0;i<=1;i++){
-                for(int j=3;j<=5;j++){
-                    System.out.println(matAux[j][i]);
+           //IMPRESION MATRIZ AUXILIAR
+            for(int i=0;i<3;i++){
+                for(int j=0;j<3;j++){
+                    System.out.print(matAux[i][j]+" ");
                 }
+                System.out.println("");
             }
+//            for(int i=0;i<=1;i++){
+//                for(int j=3;j<=5;j++){
+//                    matAux[j][i]=matriz[j][i];
+//                }
+//            }
         }
+        
         
         //IMPRESION DE MATRICES SIN CORTE
         for(int i=filIn;i<=filFin;i++){
