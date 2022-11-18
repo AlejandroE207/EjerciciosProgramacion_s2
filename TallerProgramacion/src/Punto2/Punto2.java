@@ -7,8 +7,8 @@ public class Punto2 {
         Scanner sc = new Scanner(System.in);
         int n=5; int k=1;
         int indice;
-//        int [] estante1= {3,5,2,7,1};
-//        int [] estante2= {14,2,3,10,4};
+        int opc;
+        
         System.out.println("////////// PUNTO 2 //////////");
         System.out.print("Ingrese la cantidad de libros que hay por estante: ");
         n=sc.nextInt();
@@ -23,15 +23,29 @@ public class Punto2 {
         int [] estante1= new int [n];
         int [] estante2= new int [n];
         
-        System.out.println("INGRESO DE VALORES DEL ESTANTE 1");
-        for(int i=0;i<n;i++){
-            System.out.print("Digita el tamaño del libro #"+i+": ");
-            estante1[i]=sc.nextInt();
+        System.out.println("¿QUE VALORES DESEA? (DIGITE EL NUMERO 1 0 2):\n1. VALORES DEL EJERCICIO\n2. DIGITAR VALORES");
+        System.out.print(": ");opc=sc.nextInt();
+        while(opc>2 || opc<1){//EL VALOR DE LA OPCIO TIENE QUE SER 1 O 2
+            System.out.println("DIGITE EL NUMERO DE ALGUNO DE LAS OPCIONES:\n1. VALORES DEL EJERCICIO\n2. DIGITAR VALORES");
+            System.out.print(": ");opc=sc.nextInt();
         }
-        System.out.println("INGRESO DE VALORES DEL ESTANTE 2");
-        for(int i=0;i<n;i++){
-            System.out.print("Digita el tamaño del libro #"+i+": ");
-            estante2[i]=sc.nextInt();
+        if(opc==1){
+            int [] estante1Aux= {3,5,2,7,1};
+            int [] estante2Aux= {14,2,3,10,4};
+            estante1=estante1Aux;
+            estante2=estante2Aux;
+        }
+        if(opc==2){
+            System.out.println("INGRESO DE VALORES DEL ESTANTE 1");
+            for(int i=0;i<n;i++){
+                System.out.print("Digita el tamaño del libro #"+i+": ");
+                estante1[i]=sc.nextInt();
+            }
+            System.out.println("INGRESO DE VALORES DEL ESTANTE 2");
+            for(int i=0;i<n;i++){
+                System.out.print("Digita el tamaño del libro #"+i+": ");
+                estante2[i]=sc.nextInt();
+            }
         }
         
         // BUCLE PARA REALIZAR CAMBIOS DE UBICACION

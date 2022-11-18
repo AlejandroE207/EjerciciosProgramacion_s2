@@ -5,26 +5,38 @@ public class Punto1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int [][]matriz=new int[5][5];
-//        int matriz[][]={{1,1,1,5,5},
-//                        {2,1,5,5,4},
-//                        {2,1,5,4,4},
-//                        {2,2,4,4,3},
-//                        {2,3,3,3,3}};
   
         int filas=matriz.length;
         int colum=matriz[0].length;
         int n,numVal=0;
         int uniones;
-        System.out.println("////////// PUNTO 1 //////////");
-//BUCLE DE LLENADO DE MATRIZ
-        System.out.println("LLENADO DE MATRIZ");
-        for(int i=0;i<filas;i++){
-            for(int j=0;j<colum;j++){
-                System.out.print("Digite el valor de la posicion ["+i+"]["+j+"]:");
-                n=sc.nextInt();
-                
+        int opc=0;
+        //MENU SI DESEA UTILIZAR LOS DATOS DEL EJERCICIO O SEAN RANDOM
+        System.out.println("////////// PUNTO 1 //////////\n");
+        System.out.println("¿QUE VALORES DESEA? (DIGITE EL NUMERO 1 0 2):\n1. VALORES DEL EJERCICIO\n2. DIGITAR VALORES");
+        System.out.print(": ");opc=sc.nextInt();
+        while(opc>2 || opc<1){//EL VALOR DE LA OPCIO TIENE QUE SER 1 O 2
+            System.out.println("DIGITE EL NUMERO DE ALGUNO DE LAS OPCIONES:\n1. VALORES DEL EJERCICIO\n2. DIGITAR VALORES");
+            System.out.print(": ");opc=sc.nextInt();
+        }
+        if(opc==1){
+            int matriz2[][]={{1,5,1,5,5},
+                            {2,1,5,5,4},
+                            {2,1,5,4,4},
+                            {2,2,4,4,3},
+                            {2,3,3,3,3}};
+            matriz=matriz2;
+        }
+        if(opc==2){
+            System.out.println("LLENADO DE MATRIZ");
+            for(int i=0;i<filas;i++){
+                for(int j=0;j<colum;j++){
+                    System.out.print("Digite el valor de la posicion ["+i+"]["+j+"]:");
+                    n=sc.nextInt();
+                }
             }
         }
+        
         ArrayList<Integer> valores = new ArrayList<>();
         for(int i=0;i<filas;i++){
             for(int j=0;j<colum;j++){
@@ -35,7 +47,6 @@ public class Punto1 {
         }
 
         numVal=valores.size();
-        System.out.println(numVal);
         uniones=(filas*colum)-numVal;
         
 //BUCLE DE COMPARACION PARA SABER SI ES O NO CONTIGUA
@@ -65,7 +76,12 @@ public class Punto1 {
                 }
            }
        }
-        System.out.println("Uniones "+uniones);
+        for(int i=0;i<filas;i++){
+            for(int j=0;j<colum;j++){
+                System.out.print("{"+matriz[i][j]+"] \t");
+            }
+            System.out.println("");
+        }
        if(uniones==0){
            System.out.println("Matriz contigua");
        }
