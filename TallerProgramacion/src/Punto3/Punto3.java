@@ -80,9 +80,6 @@ public class Punto3 {
     public static void imprimirSubMatriz(int[][]matriz,int filIn,int colmIn,int filFin,int colmFin,int cont){
         
         if(colmIn==9 && colmFin==1){
-            int numMin=9999;
-            int minAux=0;
-            int filMin=0,colMin=0;
             int [][]matAux=new int [3][3];
             //FOR MAT AUXILIAR 
             for(int i=0;i<3;i++){
@@ -110,36 +107,14 @@ public class Punto3 {
                 }
             }
             
-            for(int i=0;i<3;i++){
-                for(int j=0;j<3;j++){
-                    if(numMin>matAux[i][j]){
-                        filMin=i;colMin=j;
-                        numMin=matriz[i][j];
-                    }
-                }
-            }
-            minAux=matAux[1][1];
-            matAux[1][1]=numMin;
-            matAux[filMin][colMin]=minAux;
             System.out.println("****** SUBMATRIZ: "+cont+" ******");
-            for(int i=0;i<3;i++){
-                for(int j=0;j<3;j++){
-                    System.out.print("["+matAux[i][j]+"] \t");
-                }
-                System.out.println("\t");
-            }
-            System.out.println("Numero menor: "+numMin);
-            System.out.println("Fila original: "+filMin);
-            System.out.println("Columna original: "+colmIn);
-            System.out.println("");
+            posicionMenor(matAux);
             
         }
         
         //SEGUNDA MATRIZ PARTIDA
         if(colmIn==8 && colmFin==0){
-            int numMin=9999;
-            int minAux=0;
-            int filMin=0,colMin=0;
+
             int [][]matAux=new int [3][3];
             
              for(int i=0;i<3;i++){
@@ -166,74 +141,55 @@ public class Punto3 {
                     matAux[j][i+1]=aux;
                 }
             }
-            for(int i=0;i<3;i++){
-                for(int j=0;j<3;j++){
-                    if(numMin>matAux[i][j]){
-                        filMin=i;colMin=j;
-                        numMin=matriz[i][j];
-                    }
-                }
-            }
-            minAux=matAux[1][1];
-            matAux[1][1]=numMin;
-            matAux[filMin][colMin]=minAux;
             
             //IMPRESION SEGUNDA MATRIZ PARTIDA
             System.out.println("****** SUBMATRIZ: "+cont+" ******");
-            for(int i=0;i<3;i++){
-                for(int j=0;j<3;j++){
-                    System.out.print("["+matAux[i][j]+"] \t");
-                }
-                System.out.println("\t");
-            }
-            System.out.println("Numero menor: "+numMin);
-            System.out.println("Fila original: "+filMin);
-            System.out.println("Columna original: "+colmIn);
-            System.out.println("");
+            posicionMenor(matAux);
         }
         
         //MATRICES NORMALES
         if(colmIn<9 && colmFin>colmIn){
-            int numMin=9999;
-            int minAux=0;
-            int filMin=0,colMin=0;
+//            int numMin=9999;
+//            int minAux=0;
+//            int filMin=0,colMin=0;
             int[][]matAux= new int[3][3];
             for(int i=filIn;i<=filFin;i++){
                 for(int j=colmIn;j<=colmFin;j++){
                     matAux[i-filIn][j-colmIn]=matriz[i][j]; 
                 }
             }
-            for(int i=0;i<3;i++){
-                for(int j=0;j<3;j++){
-                    if(numMin>matAux[i][j]){
-                        filMin=i;colMin=j;
-                        numMin=matAux[i][j];
-                    }
-                }
-            }
-            minAux=matAux[1][1];
-            matAux[1][1]=numMin;
-            matAux[filMin][colMin]=minAux;
             System.out.println("****** SUBMATRIZ: "+cont+" ******");
-            
-            
-            for(int i=0;i<3;i++){
-                for(int j=0;j<3;j++){
-                    System.out.print("["+matAux[i][j]+"] \t");
+            posicionMenor(matAux);
+        } 
+    }
+    
+    public static void posicionMenor(int [][]mat){
+        int min=mat[0][0];
+        int auxMin=0;
+        int coMin=0;int fiMin=0;
+        
+        for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                if(min>mat[i][j]){
+                    min=mat[i][j];
+                    coMin=j;fiMin=i;
                 }
-                System.out.println("");
             }
-//            for(int i=filIn;i<=filFin;i++){
-//                for(int j=colmIn;j<=colmFin;j++){
-//                    System.out.print("["+matriz[i][j]+"] \t");
-//                }
-//                System.out.println("\t");
-//            }
-            System.out.println("Numero menor: "+numMin);
-            System.out.println("Fila original: "+filMin);
-            System.out.println("Columna original: "+colmIn);
+        }
+        auxMin=mat[1][1];
+        mat[1][1]=min;
+        mat[fiMin][coMin]=auxMin;
+        for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                System.out.print("["+mat[i][j]+"] \t");
+            }
             System.out.println("");
         }
+        System.out.println("Numero menor: "+min);
+        System.out.println("Fila Original: "+fiMin);
+        System.out.println("Columna Original: "+coMin);
+        System.out.println("");
+        
         
     }
 }

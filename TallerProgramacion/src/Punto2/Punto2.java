@@ -109,8 +109,6 @@ public class Punto2 {
         //CALCULO DE INDICE
         indice=numMaxEst1+numMaxEst2;
         System.out.println("\nIndice: "+indice);
-        
-        
     }
 }
 
